@@ -1,0 +1,183 @@
+[
+    {
+        "id": 1,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 2,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 3,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 4,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 5,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 6,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 7,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 8,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 9,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    },
+    {
+        "id": 10,
+        "name": {
+            "english": "Bulsadss",
+            "japanesename": "dsaf",
+            "chinese": "zhangyixing",
+            "french":"asdf"
+        },
+        "type": ["Grass", "Polson"],
+        "base": {
+            "HP": 45,
+            "Attack": 49,
+            "Defense": 49,
+            "SP.Attack": 65,
+            "SP.Defence": 65,
+            "Speed": 45
+        }
+    }
+
+]
