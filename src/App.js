@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import "./App.css";
-import { useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import styled from '@emotion/styled'
 import { Button } from '@material-ui/core';
 
@@ -81,61 +81,132 @@ const Input = styled.input({
   padding: '0.2rem'
 })
 
-function App() {
-  const [filter, setFilter] = useState("");
-  const [pokemon, setpokemon] = useState([])
-  const [selectItem, setSelectItem] = useState(null);
+class App extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      filter: '',
+      pokemon: [],
+      selectItem: null
+    }
+  }
 
-  useEffect(() => {
+  componentDidMount(){
     fetch('http://localhost:3000/starting-react/pokemon.json')
     .then(res => res.json())
     .then(pokemon=> {
-      setpokemon(pokemon)
+      this.setState({
+        pokemon
+      })
     })
+    
+  }
 
-  }, [])
+  render(){
+    return (
+      <Container>
+        <Title> hello react</Title>
+        <GridTemplate>
+          <div>
+            <Input
+              value={this.state.filter}
+              onChange={(evt) => {
+                this.setState({
+                  filter: evt.target.value
+                });
+              }}
+            />
+  
+            <table width="100%">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.pokemon
+                  .slice(0, 5)
+                  .filter((item) =>
+                    item.name.english.toLowerCase().includes(this.state.filter)
+                  )
+                  .map((item) => {
+                    return (
+                      <PokemonRow
+                        pokemon={item}
+                        onSelect={(pokemon) => this.setState({
+                          selectItem: pokemon
+                        })}
+                        key={item.id}
+                      ></PokemonRow>
+                    );
+                  })}
+              </tbody>
+            </table>
+          </div>
+          {this.state.selectItem && <PokemonInfo {...this.state.selectItem}></PokemonInfo>}
+        </GridTemplate>
+      </Container>
+    );
+  }
 
-  return (
-    <Container>
-      <Title> hello react</Title>
-      <GridTemplate>
-        <div>
-          <Input
-            value={filter}
-            onChange={(evt) => {
-              setFilter(evt.target.value);
-            }}
-          />
-
-          <table width="100%">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pokemon
-                .slice(0, 5)
-                .filter((item) =>
-                  item.name.english.toLowerCase().includes(filter)
-                )
-                .map((item) => {
-                  return (
-                    <PokemonRow
-                      pokemon={item}
-                      onSelect={(pokemon) => setSelectItem(pokemon)}
-                      key={item.id}
-                    ></PokemonRow>
-                  );
-                })}
-            </tbody>
-          </table>
-        </div>
-        {selectItem && <PokemonInfo {...selectItem}></PokemonInfo>}
-      </GridTemplate>
-    </Container>
-  );
 }
+
+// function App() {
+//   const [filter, setFilter] = useState("");
+//   const [pokemon, setpokemon] = useState([])
+//   const [selectItem, setSelectItem] = useState(null);
+
+//   useEffect(() => {
+//     fetch('http://localhost:3000/starting-react/pokemon.json')
+//     .then(res => res.json())
+//     .then(pokemon=> {
+//       setpokemon(pokemon)
+//     })
+
+//   }, [])
+
+//   return (
+//     <Container>
+//       <Title> hello react</Title>
+//       <GridTemplate>
+//         <div>
+//           <Input
+//             value={filter}
+//             onChange={(evt) => {
+//               setFilter(evt.target.value);
+//             }}
+//           />
+
+//           <table width="100%">
+//             <thead>
+//               <tr>
+//                 <th>Name</th>
+//                 <th>Type</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {pokemon
+//                 .slice(0, 5)
+//                 .filter((item) =>
+//                   item.name.english.toLowerCase().includes(filter)
+//                 )
+//                 .map((item) => {
+//                   return (
+//                     <PokemonRow
+//                       pokemon={item}
+//                       onSelect={(pokemon) => setSelectItem(pokemon)}
+//                       key={item.id}
+//                     ></PokemonRow>
+//                   );
+//                 })}
+//             </tbody>
+//           </table>
+//         </div>
+//         {selectItem && <PokemonInfo {...selectItem}></PokemonInfo>}
+//       </GridTemplate>
+//     </Container>
+//   );
+// }
 
 export default App;
