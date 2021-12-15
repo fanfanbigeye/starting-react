@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./App.css";
-// import pokemon from "./pokemon.json";
 import { useState, useEffect} from "react";
+import styled from '@emotion/styled'
 
 const PokemonRow = ({ pokemon, onSelect }) => {
   return (
@@ -58,6 +58,28 @@ PokemonRow.propTypes = {
   onSelect: PropTypes.func.isRequired,
 };
 
+const Container = styled.div({
+  margin: "auto",
+  width: 800,
+  paddingTop: "1rem",
+})
+
+const GridTemplate = styled.div({
+  display: "grid",
+          gridTemplateColumns: "70% 30%",
+          gridColumnGap: "1rem",
+})
+
+const Title = styled.h1({
+  textAlign: 'center'
+})
+
+const Input = styled.input({
+  width: '100%',
+  fontSize: 'x-large',
+  padding: '0.2rem'
+})
+
 function App() {
   const [filter, setFilter] = useState("");
   const [pokemon, setpokemon] = useState([])
@@ -73,24 +95,11 @@ function App() {
   }, [])
 
   return (
-    <div
-      style={{
-        margin: "auto",
-        width: 800,
-        paddingTop: "1rem",
-      }}
-    >
-      <h1 className="title"> hello react</h1>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "70% 30%",
-          gridColumnGap: "1rem",
-        }}
-      >
+    <Container>
+      <Title> hello react</Title>
+      <GridTemplate>
         <div>
-          <input
+          <Input
             value={filter}
             onChange={(evt) => {
               setFilter(evt.target.value);
@@ -122,10 +131,9 @@ function App() {
             </tbody>
           </table>
         </div>
-
         {selectItem && <PokemonInfo {...selectItem}></PokemonInfo>}
-      </div>
-    </div>
+      </GridTemplate>
+    </Container>
   );
 }
 
